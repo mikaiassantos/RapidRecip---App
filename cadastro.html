@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" href="assets/images/LogoCafe.png" type="image/x-icon">
+    <title>RapidRecipes - registro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="assets/images/LogoCafe.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form" id="signupFormContainer">
+            <h2 class="form-title">Cadastro</h2>
+            <form id="signupForm" action="login.html" method="post"> <!-- Ação definida aqui -->
+                <div class="form-group">
+                    <input type="text" id="nome" name="nome" placeholder="Nome" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="signupEmail" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="telefone" name="telefone" placeholder="Telefone" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="signupPassword" name="senha" placeholder="Senha" required>
+                </div>
+                <button type="button" class="btn-signup" onclick="validarCadastro()">Cadastrar</button>
+                <!-- Botão de envio dentro do formulário -->
+            </form>
+            <p class="form-info">Já tem uma conta? <a href="login.html">Faça login</a></p>
+        </div>
+    </div>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            overflow: hidden;
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: auto;
+            /* Adicione esta linha para permitir a rolagem dentro do container */
+        }
+
+        .form {
+            width: 320px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            /* Aumente o padding para dar mais espaço interno aos inputs */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            /* Aumente o raio do border-radius para arredondar mais os cantos */
+            outline: none;
+            transition: border-color 0.3s;
+            /* Adicione uma transição para a cor da borda */
+        }
+
+        .form-group input:focus {
+            border-color: #5cb387;
+            /* Mude a cor da borda ao focar no input */
+        }
+
+        .btn-signup {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #5cb387;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-signup:hover {
+            background-color: #4CAF50;
+        }
+
+        .form-info {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .form-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .form-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Adicione o estilo do dark-mode aqui */
+
+        body.dark-mode {
+            background-color: #090f17;
+            color: #fff;
+        }
+
+        .dark-mode .container {
+            background-color: transparent;
+        }
+
+        .dark-mode .form {
+            background-color: #090f17;
+            border: 1px solid #fff;
+        }
+
+        .dark-mode .form-title {
+            color: #fff;
+        }
+
+        .dark-mode .form-group input {
+            border: 1px solid #5cb387;
+        }
+
+        .dark-mode .form-group input:focus {
+            border-color: #5cb387;
+        }
+
+        .dark-mode .btn-signup {
+            background-color: #5cb387;
+        }
+
+        .dark-mode .btn-signup:hover {
+            background-color: #4CAF50;
+        }
+
+        .dark-mode .form-info {
+            color: #f0f7ff;
+        }
+
+        .dark-mode .form-info a {
+            color: #45aaf2;
+        }
+
+        .dark-mode .form-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <script>
+        function validarCadastro() {
+            var nome = document.getElementById('nome').value;
+            var sobrenome = document.getElementById('sobrenome').value;
+            var email = document.getElementById('signupEmail').value;
+            var telefone = document.getElementById('telefone').value;
+            var senha = document.getElementById('signupPassword').value;
+
+            if (nome.trim() === '' || sobrenome.trim() === '' || email.trim() === '' || telefone.trim() === '' || senha.trim() === '') {
+                alert("Por favor, preencha todos os campos.");
+            } else {
+                window.location.href = "login.html";
+            }
+        }
+
+        // Verificar se o tema escuro está ativado quando a página carregar
+        const isDarkMode = localStorage.getItem('theme') === 'dark';
+
+        // Função para ativar o modo escuro
+        function enableDarkMode() {
+            document.body.classList.add('dark-mode');
+            document.body.classList.remove('light-mode');
+        }
+
+        // Se o tema escuro estiver ativado por padrão, ativar o modo escuro
+        if (isDarkMode) {
+            enableDarkMode();
+        }
+    </script>
+
+</body>
+
+</html>

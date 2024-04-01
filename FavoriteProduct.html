@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" href="assets/images/LogoCafe.png" type="image/x-icon">
+    <title>Produtos Favoritos</title>
+    <link rel="stylesheet" href="assets/style.css">
+
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body class="light-mode">
+    <header>
+        <div class="nav container" style="display: flex; align-items: center; justify-content: center;">
+            <h2>Meus Favoritos</h2>
+        </div>
+    </header>
+
+    <section class="product-fav">
+        <!-- Container para os produtos favoritos -->
+        <div id="favorite-products" class="container-grid"></div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <ul class="footer-menu">
+            <li><a href="home.html" id="homeLink"><i class='bx bx-home'></i></a></li>
+            <li><a href="FavoriteProduct.html" id="favoriteLink"><i class='bx bx-heart'></i></a>
+            </li>
+            <li><a href="profile.html" id="userLink"><i class='bx bx-user'></i></a></li>
+        </ul>
+    </footer>
+
+    <script src="Favorite.js"></script>
+    <script src="AppPro.js"></script>
+
+    <!-- JavaScript para recuperar e exibir os produtos favoritos -->
+    <!-- JavaScript para recuperar e exibir os produtos favoritos -->
+    <script>
+        window.onload = function () {
+            // Recupera os produtos favoritos do localStorage
+            var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+            // Adiciona os produtos favoritos ao DOM
+            favorites.forEach(productId => {
+                addFavoriteProductToDOM(productId);
+            });
+        };
+
+        function addFavoriteProductToDOM(productId) {
+            var product = getProductById(productId);
+            if (!product) return;
+
+            var productBox = document.createElement('div');
+            productBox.className = "product-box"; // Adiciona a classe para o estilo do produto
+
+            var productImg = document.createElement('img');
+            productImg.src = product.imageUrl;
+            productImg.alt = "";
+            productImg.className = "product-img";
+
+            var productTitle = document.createElement('h2');
+            productTitle.className = "product-title";
+            productTitle.textContent = product.name;
+
+            var productLink = document.createElement('a');
+            productLink.href = "Product" + productId + ".html";
+            productLink.className = "product1";
+            productLink.style.textDecoration = "none";
+            productLink.style.color = "black";
+            productLink.id = "favorite-product-" + productId; // Adiciona um ID exclusivo para cada produto favorito
+
+            productBox.appendChild(productImg);
+            productBox.appendChild(productTitle);
+            productLink.appendChild(productBox);
+
+            // Aplicar estilos adicionais aos produtos favoritos
+            productBox.style.position = "relative";
+            productBox.style.borderRadius = "20px";
+            productBox.style.overflow = "hidden";
+            productBox.style.boxShadow = "0px 4px 8px rgba(0, 0, 0, 0.1)";
+            productBox.style.transition = "box-shadow 0.3s ease";
+
+            productBox.addEventListener('mouseenter', function () {
+                productBox.style.boxShadow = "0px 8px 16px rgba(0, 0, 0, 0.2)";
+            });
+
+            productBox.addEventListener('mouseleave', function () {
+                productBox.style.boxShadow = "0px 4px 8px rgba(0, 0, 0, 0.1)";
+            });
+
+            var trashIcon = document.createElement('i');
+            trashIcon.className = "bx bx-trash trash-icon";
+            trashIcon.onclick = function () {
+                removeFavoriteProduct(productId);
+            };
+
+            productTitle.appendChild(trashIcon);
+
+            document.getElementById('favorite-products').appendChild(productLink);
+        }
+
+
+
+        // Função para remover um produto favorito do DOM e do armazenamento local
+        function removeFavoriteProduct(productId) {
+            // Remove o produto favorito do DOM
+            var favoriteProduct = document.getElementById("favorite-product-" + productId);
+            if (favoriteProduct) {
+                favoriteProduct.remove();
+            }
+
+            // Remove o produto favorito do armazenamento local (localStorage)
+            var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            var index = favorites.indexOf(productId);
+            if (index !== -1) {
+                favorites.splice(index, 1);
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+            }
+        }
+
+        // Verificar se o tema escuro está ativado quando a página carregar
+        const isDarkMode = localStorage.getItem('theme') === 'dark';
+
+        // Função para ativar o modo escuro
+        function enableDarkMode() {
+            document.body.classList.add('dark-mode');
+            document.body.classList.remove('light-mode');
+        }
+
+        // Se o tema escuro estiver ativado por padrão, ativar o modo escuro
+        if (isDarkMode) {
+            enableDarkMode();
+        }
+    </script>
+
+</body>
+
+</html>

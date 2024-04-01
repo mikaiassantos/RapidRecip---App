@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" href="assets/images/LogoCafe.png" type="image/x-icon">
+    <title>RapidRecipes</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="assets/images/LogoCafe.png" type="image/x-icon">
+</head>
+
+<body>
+    <section class="user-profile">
+        <div class="profile">
+            <div class="profile-header">
+                <img src="assets/images/avatar-man.png" alt="Foto de Perfil" class="profile-picture">
+                <h2 class="profile-name">Fulano de Tal</h2>
+                <a href="">Editar perfil</a>
+            </div>
+            <div class="profile-info">
+                <div class="info-item">
+                    <i class='bx bxs-envelope'></i>
+                    <p class="info-text">Email: exemplo@exemplo.com</p>
+                </div>
+                <div class="info-item">
+                    <i class='bx bxs-phone'></i>
+                    <p class="info-text">Telefone: (00) 12345-6789</p>
+                </div>
+                <div class="info-item">
+                    <i class='bx bxs-user-detail'></i>
+                    <p class="info-text">Biografia: Amante da culinária e apaixonado por experimentar novos sabores.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings">
+            <h3 class="settings-title">Configurações e suporte <i id="toggleIcon" class='bx bx-chevron-right'
+                    onclick="toggleSettings()"></i></h3>
+            <div id="settingsDetails" style="display: none;">
+                <div class="info-item">
+                    <i class='bx bxs-cog'></i>
+                    <p class="info-link"><a href="#">Configurações</a></p>
+                </div>
+                <div class="info-item">
+                    <i class='bx bxs-lock-alt'></i>
+                    <p class="info-link"><a href="#">Privacidade</a></p>
+                </div>
+                <div class="info-item">
+                    <i class='bx bxs-help-circle'></i>
+                    <p class="info-link"><a href="#">Central de Ajuda</a></p>
+                </div>
+            </div>
+            <button onclick="logout()" class="logout-button" style="align-items: center;">Sair</button>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <ul class="footer-menu">
+            <li><a href="home.html" id="homeLink" class="active"><i class='bx bx-home'></i></a></li>
+            <li><a href="FavoriteProduct.html" id="favoriteLink"><i class='bx bx-heart'></i></a></li>
+            <li><a href="profile.html" id="userLink"><i class='bx bx-user'></i></a></li>
+        </ul>
+    </footer>
+
+    <!-- Link JS-->
+    <script src="script.js"></script>
+    <script src="Favorite.js"> </script>
+    <script>
+        function toggleSettings() {
+            var settingsDetails = document.getElementById('settingsDetails');
+            var toggleIcon = document.getElementById('toggleIcon');
+            if (settingsDetails.style.display === 'none') {
+                settingsDetails.style.display = 'block';
+                toggleIcon.classList.remove('bx-chevron-right');
+                toggleIcon.classList.add('bx-chevron-down');
+            } else {
+                settingsDetails.style.display = 'none';
+                toggleIcon.classList.remove('bx-chevron-down');
+                toggleIcon.classList.add('bx-chevron-right');
+            }
+        }
+
+        //caminho de saída do perfil
+        function logout() {
+            // Redireciona para a página index.html
+            window.location.href = "index.html";
+        }
+
+        // Verificar se o tema escuro está ativado quando a página carregar
+        const isDarkMode = localStorage.getItem('theme') === 'dark';
+
+        // Função para ativar o modo escuro
+        function enableDarkMode() {
+            document.body.classList.add('dark-mode');
+            document.body.classList.remove('light-mode');
+        }
+
+        // Se o tema escuro estiver ativado por padrão, ativar o modo escuro
+        if (isDarkMode) {
+            enableDarkMode();
+        }
+    </script>
+</body>
+
+</html>

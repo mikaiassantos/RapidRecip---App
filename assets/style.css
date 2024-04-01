@@ -1,0 +1,740 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --main-color: #3f1e1e;
+    --text-color: #171427;
+    --bg-color: #fff;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    background-color: #fff;
+    padding-bottom: 100px;
+}
+
+.light-mode {
+    background-color: #ffffff;
+}
+
+/*Tema escruro*/
+.dark-mode {
+    background-color: #090f17;
+
+}
+
+.dark-mode header {
+    border-bottom: 1px solid #fff;
+}
+
+.dark-mode header,
+.dark-mode footer,
+.dark-mode .menu,
+.dark-mode footer .footer-menu i {
+    background-color: #0E1621;
+    color: #fff;
+}
+
+.dark-mode .menu .menu-op li a, 
+.dark-mode header .nav a {
+    color: #fff;
+}
+
+.dark-mode footer {
+    border-top: 1px solid #fff;
+}
+
+.dark-mode .product-box {
+    background-color: #fff;
+
+}
+
+.dark-mode .settings h3,
+.dark-mode .settings h3 i {
+    color: #fff;
+}
+
+.dark-mode .user p {
+    color: #fff;
+}
+
+.dark-mode .settings .info-item {
+    border: none;
+    background-color: transparent;
+    max-width:350px;
+    color: #fff;
+}
+
+.dark-mode .settings .info-item a {
+    color: #fff;
+}
+
+
+/*Final tema escura*/
+
+.container {
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+
+section {
+    padding: 4rem 0 3rem;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 46px;
+    background-color: var(--bg-color);
+    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+    z-index: 100;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    /* Ajuste o espaçamento nas laterais */
+}
+
+.logo {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+#menu-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0 0px;
+    /* Adiciona espaçamento nas laterais */
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: -300%;
+    width: 300px;
+    min-height: 100vh;
+    padding: 30px 0px 0px 0px;
+    background: var(--bg-color);
+    box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+    transition: 0.5;
+    transition: left 0.3s ease;
+}
+
+.position {
+    text-align: center;
+    max-width: 300px;
+    /* Ajuste a largura máxima conforme necessário */
+}
+
+.menu.active {
+    left: 0;
+}
+
+#user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 27px;
+    margin-bottom: 20px;
+}
+
+#user_avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+#user_infos {
+    display: flex;
+    flex-direction: column;
+}
+
+#user_infos span:last-child {
+    color: #6b6b6b;
+    font-size: 12px;
+}
+
+.menu .closed {
+    padding: 0px 0px 0px 25px;
+}
+
+.menu .closed i {
+    font-size: 25px;
+}
+
+.menu-title {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-bottom: 20px;
+    /* Adiciona espaçamento na parte inferior */
+    margin: 0;
+    /* Removido o margin-left */
+    max-width: 200px;
+    /* Define a largura máxima para evitar que o título se estenda demais */
+}
+
+.menu-Mobile {
+    text-align: center;
+    padding-top: 15px;
+    top: 60px;
+    padding: 0px;
+    display: none;
+}
+
+.Menu-Mobile ul {
+    list-style: none;
+    border-bottom: 1px solid #eee;
+}
+
+.Menu-Mobile li {
+    display: flex;
+    align-items: center;
+    margin: 15px;
+    padding: 15px;
+}
+
+.Menu-Mobile li:hover {
+    padding: 15px;
+    background-color: #f54748;
+    border-radius: 15px;
+    /* Aumentei o valor do border-radius */
+    transition: background-color 0.8s;
+
+}
+
+.Menu-Mobile li.active,
+.Menu-Mobile li:hover {
+    background-color: #f54748;
+    border-radius: 15px;
+    /* Aumentei o valor do border-radius */
+    transition: background-color 0.8s;
+}
+
+.Menu-Mobile a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #171427;
+}
+
+.menu .light-mobile {
+    padding:20px;
+    /* Distância do ícone em relação à borda direita da tela */
+    z-index: 999;
+    /* Certifique-se de que o ícone apareça sobre o rodapé */
+    font-size: 30px;
+}
+
+/* Estilo para o contêiner do campo de pesquisa */
+.search-container {
+    position: relative;
+    width: 100%;
+    /* Largura total */
+    max-width: 500px;
+    /* Largura máxima */
+    margin: 0 auto;
+    /* Centraliza horizontalmente */
+}
+
+form {
+    padding-top: 10px;
+}
+
+/* Estilo para o input de pesquisa */
+.search-container input[type="text"] {
+    width: 100%;
+    /* Largura total menos a largura do ícone de pesquisa e o espaçamento */
+    padding: 15px;
+    /* Adiciona espaço interno */
+    border: 0px;
+    /* Adiciona borda */
+    background-color: #f6f7fc;
+    border-radius: 10px;
+    /* Adiciona borda arredondada */
+    outline: none;
+    /* Remove o contorno padrão */
+    text-indent: 40px;
+    /* Ajusta o texto para a direita */
+}
+
+i.bx.bx-search {
+    padding-top: 0px;
+}
+
+/* Estilo para o ícone de pesquisa */
+.bx-search {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    /* Cor do ícone */
+    cursor: pointer;
+    z-index: 1;
+    color: #000;
+    font-size: 25px;
+}
+
+/* Estilo para o texto de orientação dentro do input */
+.placeholder-text {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+    /* Evita a seleção do texto de orientação */
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    /* Transição suave para a opacidade */
+}
+
+/* Estilo para o texto de orientação ativo */
+.search-container input[type="text"]:focus+.placeholder-text,
+.search-container input[type="text"]:not(:placeholder-shown)+.placeholder-text {
+    opacity: 0;
+    /* Torna o texto de orientação invisível quando o input está em foco ou contém texto */
+}
+
+/* Estilo para o contêiner dos links */
+.container-links {
+    align-items: center;
+    overflow-x: auto;
+    /* Adiciona a barra de rolagem horizontal */
+    white-space: nowrap;
+    /* Impede que os itens quebrem a linha */
+    -ms-overflow-style: none;
+    /* IE e Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+
+/* Estilo para a lista de links */
+.container-links ul {
+    display: inline-flex;
+    /* Exibe os itens lado a lado horizontalmente */
+    padding: 0;
+    /* Remove o preenchimento padrão */
+    margin: 0;
+    /* Remove a margem padrão */
+    list-style-type: none;
+    /* Remove os marcadores de lista */
+}
+
+/* Estilo para cada item da lista */
+.container-links ul li {
+    margin: 10px 10px 10px 0px;
+    padding-top: 10px;
+}
+
+/* Estilo para o link */
+.container-links ul li a {
+    text-decoration: none;
+    color: #000;
+    background-color: #f6f7fc;
+    padding: 10px 15px;
+    border: 0px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    /* Transição suave para hover */
+}
+
+/* Estilo de hover para o link */
+.container-links ul li a:hover {
+    background-color: #f54748;
+    color: #fff;
+}
+
+/* Estilo do link ativo */
+.container-links ul li a.active-link {
+    background-color: #f54748;
+    color: #fff;
+}
+
+.container-square {
+    display: flex;
+    align-items: center;
+    /* Alinha os itens verticalmente */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 197, 197);
+}
+
+.container-square h4 {
+    margin-right: 20px;
+    /* Adiciona espaço entre o h4 e a imagem */
+    font-size: 32px;
+}
+
+.container-square img {
+    max-width: 500px;
+    /* Garante que a imagem não ultrapasse o tamanho do contêiner */
+    height: auto;
+    /* Mantém a proporção da imagem */
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+}
+
+div.shop-content {
+    padding-bottom: 25px;
+}
+
+.shop.container {
+    margin-top: 0px;
+}
+
+.shop-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    gap: 1.5rem;
+}
+
+section#search-container {
+    padding-bottom: 5px;
+}
+
+
+.product-box {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    /* Para garantir que a borda arredondada seja aplicada corretamente */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adiciona uma sombra */
+    transition: box-shadow 0.3s ease;
+    /* Adiciona uma transição suave para a sombra */
+}
+
+.product-box:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    /* Aumenta a sombra quando o mouse passa sobre */
+}
+
+.product-box img {
+    width: 100%;
+    /* Para garantir que a imagem ocupe toda a área da caixa */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    display: block;
+    /* Para remover espaços adicionais abaixo da imagem */
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    /* Alinha o texto horizontalmente */
+}
+
+.product-itens,
+i {
+    display: flex;
+    justify-content: center;
+    /* Alinha os itens horizontalmente */
+    align-items: center;
+    /* Alinha os itens verticalmente */
+    padding-top: 10px;
+    /* Adiciona espaço acima dos itens */
+    padding-right: 10px;
+}
+
+.product-itens img {
+    width: 20px;
+    height: 20px;
+}
+
+section.user-profile{
+    padding: 30px;
+}
+
+section .config-profile {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    margin-top: -50px;
+    /* Ajuste para a imagem sair um pouco da área do perfil */
+}
+
+.profile-name {
+    margin: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.info-item i {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.info-text {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+
+.info-link a {
+    text-decoration: none;
+    color: #000;
+}
+
+.info-link a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    margin: 0 auto;
+    padding: 20px 0px 0px 0px;
+    width: 100%;
+    /* Ajusta a largura da área de configurações */
+}
+
+.settings .bx.bx-chevron-down,
+.bx.bx-chevron-right {
+    padding: 0px;
+    font-size: 30px;
+}
+
+.settings .info-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.settings .info-item i {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.settings .info-text {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+
+.settings .info-link a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+}
+
+.settings .info-link a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.logout-button {
+    width: 150px;
+    background-color: #ff3b3b;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.logout-button:hover {
+    background-color: #e60000;
+}
+
+/* Estilo para o rodapé */
+.footer {
+    background-color: #fff;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    position: fixed;
+    /* Faz o rodapé flutuar na parte inferior da página */
+    width: 100%;
+    /* Faz o rodapé ocupar toda a largura da tela */
+    bottom: 0;
+    /* Fixa o rodapé na parte inferior */
+    z-index: 1000;
+    /* Certifica-se de que o rodapé apareça sobre outros elementos */
+}
+
+.footer-menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-menu li {
+    display: inline-block;
+    margin: 0 20px;
+    padding: 2px 20px 2px 20px;
+}
+
+.footer-menu li a {
+    font-size: 30px;
+    color: #000;
+    text-decoration: none;
+}
+
+
+@media (max-width:1200px) {
+    .nav {
+        padding: 15px;
+    }
+
+    section {
+        padding: 3rem 0 2rem;
+    }
+
+    .container {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .container-square img {
+        max-width: 300px;
+        /* Garante que a imagem não ultrapasse o tamanho do contêiner */
+        height: auto;
+        /* Mantém a proporção da imagem */
+    }
+
+}
+
+@media (max-width:600px) {
+    .nav {
+        padding: 11px 0px 10px 0px;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .menu {
+        width: 295px;
+    }
+
+    #favorite-products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, auto));
+        /* Define duas colunas com largura mínima de 300px */
+        gap: 1.0rem;
+        /* Espaçamento entre os produtos */
+        padding: 20px;
+    }
+
+    .shop-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, auto));
+        gap: 1.0rem;
+    }
+
+    .container-square {
+        display: flex;
+    }
+
+    .container-square h4 {
+        margin-right: 8px;
+        /* Adiciona espaço entre o h4 e a imagem */
+        font-size: 28px;
+    }
+
+    .container-square img {
+        max-width: 150px;
+        /* Garante que a imagem não ultrapasse o tamanho do contêiner */
+        height: auto;
+        /* Mantém a proporção da imagem */
+    }
+}
+
+@media (max-width:400px) {
+    .container-square h4 {
+        margin-right: 4px;
+        /* Adiciona espaço entre o h4 e a imagem */
+        font-size: 22px;
+    }
+    .container-square img {
+        max-width: 125px;
+        /* Garante que a imagem não ultrapasse o tamanho do contêiner */
+        height: auto;
+        /* Mantém a proporção da imagem */
+    }
+}

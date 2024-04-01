@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" href="assets/images/LogoCafe.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="preconnect" href="url-do-servidor">
+    <title>RapidRecipes</title>
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body class="light-mode">
+    <header>
+        <div class="nav container">
+            <i class='bx bx-menu' id="menu-icon"></i> <a href="#" class="logo">RapidRecipes</a>
+            <div class="menu">
+                <div id="user">
+                    <a href="profile.html"><img src="assets/images/avatar-man.png" id="user_avatar" alt="Avatar"></a>
+
+                    <p id="user_infos">
+                        <span class="item-description">
+                            Fulano de Tal
+                        </span>
+                        <span class="item-description">
+                            Lorem Ipsum
+                        </span>
+                    </p>
+
+                    <div class="closed">
+                        <i class='bx bxs-chevron-right'></i>
+                    </div>
+                </div>
+                <div class="Menu-Mobile" id="menu-responsive">
+                    <ul class="menu-op">
+                        <li><i class='bx bx-home'
+                                style="padding-right: 15px; font-size: 1.3rem; padding-top: 3px;"></i><a
+                                href="home.html">Início</a></li>
+                        <li><i class='bx bx-baguette'
+                                style="padding-right: 15px; font-size: 1.3rem; padding-top: 3px;"></i><a
+                                href="salgados.html">Salgados</a></li>
+                        <li><i class='bx bx-dish'
+                                style="padding-right: 15px; font-size: 1.3rem; padding-top: 3px;"></i><a
+                                href="folhados.html">Pratos</a></li>
+                        <li><img src="assets/images/hamburguer (1).png" alt="" class="product-img" id="hamburger-icon"
+                                style="width: 35px; padding: 0px 15px 0px 0px; margin: 0px;"><a
+                                href="sanduiches.html">Sanduíches</a></li>
+                        <li><i class='bx bx-cookie'
+                                style="padding-right: 15px; font-size: 1.3rem; padding-top: 3px;"></i><a
+                                href="doces.html">Sobremesa</a></li>
+                    </ul>
+                </div>
+                <div class="light-mobile"><i class='bx bxs-sun' id="toggleIcon"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="search-section Todos searchable-section" style="padding: 60px 20px 20px 20px;" data-search="todos">
+        <div class="container-square">
+            <h4>O que você<br>gostaria de cozinhar?</h4>
+            <img src="assets/images/cooking.png" alt="">
+        </div>
+        <form id="searchForm" action="">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search">
+                <i class='bx bx-search'></i>
+            </div>
+        </form>
+
+        <div class="container-links" id="containerLinks">
+            <ul>
+                <li><a href="#" class="active-link" id="Todos">Todos</a></li>
+                <li><a href="#" id="Salgados">Salgados</a></li>
+                <li><a href="#" id="Folhados">Pratos</a></li>
+                <li><a href="#" id="sanduiches">Sanduíches</a></li>
+                <li><a href="#" id="sobremesa">Sobremesa</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="shop container searchable-section" style="margin-bottom:0px; padding-bottom: 0px; padding-top: 0px;"
+        id="Salgados" data-search="salgados">
+        <div class="shop-content">
+            <!-- Box 1 -->
+            <div class="product-box">
+                <a href="Product1.html" class="product1" style="text-decoration: none; color: black;">
+                    <img src="assets/images/foto(1).jpg" alt="" class="product-img" id="product-img-1">
+                </a>
+                <div class="product-itens" style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="Product1.html" style="text-decoration: none; color: #000;">
+                        <h2 class="product-title">Esfiha</h2>
+                    </a>
+                    <!-- <i class='bx bx-heart' id="favorite-icon" style="font-size: 20px; color: #000;"></i>-->
+                    <span class="favorite-icon" onclick="toggleFavorite(1)" id="favorite-icon-1">
+                        <img src="assets/images/favorite.png" alt="Favorite" class="favorite">
+                    </span>
+                </div>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="product-box">
+                <a href="Product2.html" class="product2" style="text-decoration: none; color: black;">
+                    <img src="assets/images/foto22.jpg" alt="" class="product-img">
+                </a>
+                <div class="product-itens" style="display: flex; justify-content: space-between; text-align: center;">
+                    <a href="Product2.html" style="text-decoration: none; color: #000;">
+                        <h2 class="product-title">Empada</h2>
+                    </a>
+                    <span class="favorite-icon" onclick="toggleFavorite(2)" id="favorite-icon-2">
+                        <img src="assets/images/favorite.png" alt="Favorite" class="favorite">
+                    </span>
+                </div>
+            </div>
+
+            <!-- Box 3 -->
+            <div class="product-box">
+                <a href="Product3.html" class="product3" style="text-decoration: none; color: black;">
+                    <img src="assets/images/foto(3).jpg" alt="" class="product-img">
+                </a>
+                <div class="product-itens" style="display: flex; justify-content: space-between; text-align: center;">
+                    <a href="Product3.html" style="text-decoration: none; color: #000;">
+                        <h2 class="product-title">Pão Pizza</h2>
+                    </a>
+                    <span class="favorite-icon" onclick="toggleFavorite(3)" id="favorite-icon-3">
+                        <img src="assets/images/favorite.png" alt="Favorite" class="favorite">
+                    </span>
+                </div>
+            </div>
+
+
+            <!-- Box 4 -->
+            <div class="product-box">
+                <a href="Product4.html" class="product4" style="text-decoration: none; color: black;">
+                    <img src="assets/images/foto(4).jpg" alt="" class="product-img">
+                </a>
+                <div class="product-itens" style="display: flex; justify-content: space-between; text-align: center;">
+                    <a href="Product4.html" style="text-decoration: none; color: #000;">
+                        <h2 class="product-title">Coxinha</h2>
+                    </a>
+                    <span class="favorite-icon" onclick="toggleFavorite(4)" id="favorite-icon-4">
+                        <img src=" assets/images/favorite.png" alt="Favorite" class="favorite">
+                    </span>
+                </div>
+            </div>
+
+
+            <!-- Box 5 -->
+            <div class="product-box">
+                <a href="Product5.html" class="product5" style="text-decoration: none; color: black;">
+                    <img src="assets/images/foto(5).jpg" alt="" class="product-img">
+                </a>
+                <div class="product-itens" style="display: flex; justify-content: space-between;">
+                    <a href="Product5.html" style="text-decoration: none; color: #000;">
+                        <h2 class="product-title">Enrolado de salsicha</h2>
+                    </a>
+                    <span class="favorite-icon" onclick="toggleFavorite(5)" id="favorite-icon-5">
+                        <img src="assets/images/favorite.png" alt="Favorite" class="favorite">
+                    </span>
+                </div>
+            </div>
+
+            <!-- Box 6 -->
+            <div class="product-box">
+                <img src="assets/images/foto(6).png" alt="" class="product-img">
+                <div class="product-itens" style="display: flex; justify-content: space-between;">
+                    <h2 class="product-title">Calzone</h2>
+                    <span class="favorite-icon" onclick="toggleFavorite(6)">
+                        <img src="assets/images/favorite.png" alt="Favorite" class="favorite">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="shop container searchable-section"
+        style="margin-bottom:0px; padding-top: 0px; padding-bottom: 0px; margin-top:0px;" id="Folhados"
+        data-search="Folhados">
+        <div class="shop-content">
+            <!-- Box 7 -->
+            <div class="product-box">
+                <img src="assets/images/lasanha.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between; text-align: center;">
+                    <h2 class="product-title">Lasanha</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 8 -->
+            <div class="product-box">
+                <img src="assets/images/risoto.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between;">
+                    <h2 class="product-title">risoto de camarão</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 9 -->
+            <div class="product-box">
+                <img src="assets/images/macarronada.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between; text-align: center;">
+                    <h2 class="product-title">espaguete</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 10 -->
+            <div class="product-box">
+                <img src="assets/images/strogonoff.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between;">
+                    <h2 class="product-title">strogonoff</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 11 -->
+            <div class="product-box">
+                <img src="assets/images/feijoada.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between; text-align: center;">
+                    <h2 class="product-title">feijoada</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 12 -->
+            <div class="product-box">
+                <img src="assets/images/parmegiana.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between; text-align: center;">
+                    <h2 class="product-title">frango a parmegiana</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="shop container searchable-section"
+        style="margin-bottom:0px; padding-top: 0px; padding-bottom: 0px; margin-top:0px;" id="sanduiches"
+        data-search="sanduíches">
+        <div class="shop-content">
+            <!-- Box 13 -->
+            <div class="product-box">
+                <img src="assets/images/foto46.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between; text-align: center;">
+                    <h2 class="product-title">Misto Quente</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 14 -->
+            <div class="product-box">
+                <img src="assets/images/foto48.png" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between;">
+                    <h2 class="product-title">Baguete de Frango</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 15 -->
+            <div class="product-box">
+                <img src="assets/images/sanduiche-monte-cristo.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between; text-align: center;">
+                    <h2 class="product-title">sanduíche monte cristo</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 16 -->
+            <div class="product-box">
+                <img src="assets/images/sanduiche-natural.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between;">
+                    <h2 class="product-title">sanduíche natural</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 17 -->
+            <div class="product-box">
+                <img src="assets/images/sanduiche-frango-frito.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between; text-align: center;">
+                    <h2 class="product-title">sanduíche de frango frito</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 18 -->
+            <div class="product-box">
+                <img src="assets/images/cachorro-quente.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between;">
+                    <h2 class="product-title">cachorro quente</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="shop container searchable-section" style="padding-top: 0px; margin-top:0px;" id="sobremesa"
+        data-search="sobremesa">
+        <div class="shop-content">
+            <!-- Box 19 -->
+            <div class="product-box">
+                <img src="assets/images/tarta-limao.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between; text-align: center;">
+                    <h2 class="product-title">Torta de Limão</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 20 -->
+            <div class="product-box">
+                <img src="assets/images/brigadeiro.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between;">
+                    <h2 class="product-title">Brigadeiro</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+
+            <!-- Box 21 -->
+            <div class="product-box">
+                <img src="assets/images/bolo-de-rolo.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between; text-align: center;">
+                    <h2 class="product-title">Bolo de rolo</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+
+            <!-- Box 22 -->
+            <div class="product-box">
+                <img src="assets/images/pudim.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between; text-align: center;">
+                    <h2 class="product-title">Pudim</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+
+            <!--Box 23 -->
+            <div class="product-box">
+                <img src="assets/images/ovopascoa.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between; text-align: center;">
+                    <h2 class="product-title">Ovo de bolo de cenoura</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+
+            <!-- Box 24 -->
+            <div class="product-box">
+                <img src="assets/images/tortaoreo.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between; text-align: center;">
+                    <h2 class="product-title">pavê de oreo</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 25 -->
+            <div class="product-box">
+                <img src="assets/images/palhaitaliana.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between; text-align: center;">
+                    <h2 class="product-title">Palha italiana</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <ul class="footer-menu">
+            <li><a href="home.html" id="homeLink" class=""><i class='bx bx-home'></i></a></li>
+            <li><a href="FavoriteProduct.html" id="favoriteLink"><i class='bx bx-heart'></i></a></li>
+            <li><a href="profile.html" id="userLink"><i class='bx bx-user'></i></a></li>
+        </ul>
+    </footer>
+
+
+    <!-- Link JS-->
+    <script src="script.js"></script>
+    <script src="Favorite.js"> </script>
+
+</body>
+
+</html>

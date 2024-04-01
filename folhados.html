@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" href="assets/images/LogoCafe.png" type="image/x-icon">
+    <title>Pratos</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="assets/images/LogoCafe.png" type="image/x-icon">
+</head>
+
+<body class="light-mode">
+    <header>
+        <div class="nav container">
+            <i class='bx bx-menu' id="menu-icon"></i> <a href="#" class="logo">RapidRecipes</a>
+            <div class="menu">
+                <div id="user">
+                    <a href="profile.html"><img src="assets/images/avatar-man.png" id="user_avatar" alt="Avatar"></a>
+
+                    <p id="user_infos">
+                        <span class="item-description">
+                            Fulano de Tal
+                        </span>
+                        <span class="item-description">
+                            Lorem Ipsum
+                        </span>
+                    </p>
+
+                    <div class="closed">
+                        <i class='bx bxs-chevron-right'></i>
+                    </div>
+                </div>
+                <div class="Menu-Mobile" id="menu-responsive">
+                    <ul class="menu-op">
+                        <li><i class='bx bx-home'
+                                style="padding-right: 15px; font-size: 1.3rem; padding-top: 3px;"></i><a
+                                href="home.html">Início</a></li>
+                        <li><i class='bx bx-baguette'
+                                style="padding-right: 15px; font-size: 1.3rem; padding-top: 3px;"></i><a
+                                href="salgados.html">Salgados</a></li>
+                        <li><i class='bx bx-dish'
+                                style="padding-right: 15px; font-size: 1.3rem; padding-top: 3px;"></i><a
+                                href="folhados.html">Pratos</a></li>
+                        <li><img src="assets/images/hamburguer (1).png" alt="" class="product-img" id="hamburger-icon"
+                                style="width: 35px; padding: 0px 15px 0px 0px; margin: 0px;"><a
+                                href="sanduiches.html">Sanduíches</a></li>
+                        <li><i class='bx bx-cookie'
+                                style="padding-right: 15px; font-size: 1.3rem; padding-top: 3px;"></i><a
+                                href="doces.html">Sobremesa</a></li>
+                    </ul>
+                </div>
+                <div class="light-mobile"><i class='bx bxs-sun' id="toggleIcon"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="shop container" style="padding-top: 0%;">
+        <div class="shop-content" style="padding-top: 70px;">
+            <!-- Box 7 -->
+            <div class="product-box">
+                <img src="assets/images/lasanha.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between; text-align: center;">
+                    <h2 class="product-title">Lasanha</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 8 -->
+            <div class="product-box">
+                <img src="assets/images/risoto.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between;">
+                    <h2 class="product-title">risoto de camarão</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 9 -->
+            <div class="product-box">
+                <img src="assets/images/macarronada.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between;">
+                    <h2 class="product-title">Espaguete</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 10 -->
+            <div class="product-box">
+                <img src="assets/images/strogonoff.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between;">
+                    <h2 class="product-title">strogonoff</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 11 -->
+            <div class="product-box">
+                <img src="assets/images/feijoada.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between; text-align: center;">
+                    <h2 class="product-title">feijoada</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+            <!-- Box 12 -->
+            <div class="product-box">
+                <img src="assets/images/parmegiana.jpg" alt="" class="product-img">
+                <div class="" style="display: flex; justify-content: space-between; text-align: center;">
+                    <h2 class="product-title">frango a parmegiana</h2>
+                    <i class='bx bx-heart' id="seta-esquerda" style="font-size: 20px; color: #000;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <ul class="footer-menu">
+            <li><a href="home.html" id="homeLink"><i class='bx bx-home'></i></a></li>
+            <li><a href="FavoriteProduct.html" id="favoriteLink"><i class='bx bx-heart'></i></a></li>
+            <li><a href="profile.html" id="userLink"><i class='bx bx-user'></i></a></li>
+        </ul>
+    </footer>
+
+    <!-- Link JS-->
+    <script src="script.js"></script>
+   
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" href="assets/images/LogoCafe.png" type="image/x-icon">
+    <title>RapidRecipes - Start</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Link para o arquivo manifest.json -->
+    <link rel="manifest" href="/manifest.json">
+
+    <script>
+        if (typeof navigator.serviceWorker !== 'undefined') {
+            navigator.serviceWorker.register('pwabuilder-sw.js')
+        }
+    </script>
+
+    <style>
+        body {
+            padding: 0px 30px 0px 30px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Duas colunas iguais */
+            gap: 20px;
+            /* Espaçamento entre as colunas */
+        }
+
+        .container-start-images img {
+            max-width: 100%;
+            /* Imagem responsiva */
+            height: auto;
+            /* Imagem responsiva */
+        }
+
+        .container-start-cont {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container-start-cont h1 {
+            font-size: 60px;
+            font-weight: 700;
+            margin: 0;
+            /* Remover margem padrão */
+            line-height: 1;
+            /* Garantir que as linhas fiquem próximas */
+        }
+
+        .container-start-cont a {
+            width: 200px;
+            padding: 24px;
+            font-size: 20px;
+            border-radius: 30px;
+            background-color: #5cb387;
+            color: #fff;
+            text-decoration: none;
+            margin-top: 20px;
+            /* Espaçamento superior */
+            display: inline-flex;
+            align-items: center;
+            /* Centralizar verticalmente */
+            justify-content: center;
+            /* Centralizar horizontalmente */
+        }
+
+        .container-start-cont a:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            /* Adicionar sombra no hover */
+            transform: scale(1.01);
+            /* Aumentar um pouco o tamanho no hover */
+        }
+
+        .container-start-cont a span {
+            margin: 0 5px;
+            /* Espaçamento opcional entre o texto e a borda do botão */
+        }
+
+        /* Estilos para o modo dark */
+        body.dark-mode {
+            background-color: #090f17;
+            color: #fff;
+        }
+
+        .dark-mode .container-start-cont a {
+            background-color: #5cb387;
+            /* Cor de fundo para o botão */
+            color: #fff;
+            /* Cor do texto do botão */
+        }
+
+        .dark-mode .container-start-cont a:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            /* Adicionar sombra no hover */
+        }
+
+        @media (max-width: 768px) {
+
+            /* Adaptação para telas menores */
+            .container {
+                grid-template-columns: 1fr;
+                /* Uma coluna para telas menores */
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            body,
+            html {
+                height: 100%;
+                /* Definir altura total da viewport */
+                margin: 0;
+                /* Remover margens padrão */
+                display: flex;
+                justify-content: center;
+                /* Centralizar horizontalmente */
+                align-items: center;
+                /* Centralizar verticalmente */
+                overflow: hidden;
+                /* Impede a rolagem */
+            }
+
+            .container-start-cont h1 {
+                margin: 0;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+        }
+
+        @media (max-width: 400px) {
+            .container-start-images img {
+                max-width: 80%;
+                /* Imagem responsiva */
+                height: auto;
+                /* Imagem responsiva */
+            }
+
+            .container-start-cont h1 {
+                font-size: 50px;
+                font-weight: 700;
+                margin: 0;
+                /* Remover margem padrão */
+                line-height: 1;
+                /* Garantir que as linhas fiquem próximas */
+            }
+
+            .container-start-cont a {
+                width: 180px;
+                padding: 19px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <div class="container-start-images box1">
+            <img src="assets/images/Chef-bro.png" alt="">
+        </div>
+        <div class="container-start-cont box2">
+            <h1>It's<br>Cooking<br>Time</h1>
+            <a href="login.html"><span>Iniciar</span></a>
+        </div>
+    </section>
+
+    <!-- Link para o arquivo service-worker.js -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function (err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+
+        // Verificar se o tema escuro está ativado quando a página carregar
+        const isDarkMode = localStorage.getItem('theme') === 'dark';
+
+        // Função para ativar o modo escuro
+        function enableDarkMode() {
+            document.body.classList.add('dark-mode');
+            document.body.classList.remove('light-mode');
+        }
+
+        // Se o tema escuro estiver ativado por padrão, ativar o modo escuro
+        if (isDarkMode) {
+            enableDarkMode();
+        }
+    </script>
+</body>
+
+</html>

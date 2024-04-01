@@ -1,0 +1,107 @@
+/* Tema dark */
+.dark-mode .content-title h3 {
+    color: #fff;
+}
+
+.dark-mode ul li {
+    color: #fff;
+    /* Define a cor do texto para branco */
+}
+
+.dark-mode .product p {
+    color: #fff;
+}
+
+/* Fim do tema Dark */
+
+body,
+html {
+    background-color: #fff;
+}
+
+header {
+    align-items: center;
+    width:0px;
+}
+
+header .bx.bxs-chevron-left {
+    font-size: 40px;
+    color: #000;
+}
+
+.product {
+    padding: 0%;
+    position: relative;
+}
+
+.product .img-pro img {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.product-content {
+    top: -100px;
+}
+
+.product-content .content-info p,
+.product-content .content-info ul li {
+    color: black; /* Corrigido para o modo claro */
+    /* Adicione outros estilos, se necessário */
+}
+
+.content-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.content-title h3 {
+    font-size: 30px;
+}
+
+.content-title img {
+    width: 30px;
+    height: 30px;
+}
+
+.circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #5cb387;
+    margin-right: 5px;
+    margin-left: 15px;
+}
+
+.number {
+    font-size: 20px;
+    display: inline-block;
+}
+
+.content-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    color: black;
+    text-decoration: none;
+}
+
+.content-info span {
+    padding: 15px;
+    font-size: 14px;
+    border-radius: 15px;
+    margin-right: 7px;
+    background-color: #f6f7fc;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    text-decoration: none;
+}
+
+.content-info span img {
+    width: 80%;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" href="assets/images/LogoCafe.png" type="image/x-icon">
+    <title>Enrolado</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/AppPro.css">
+
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="assets/images/LogoCafe.png" type="image/x-icon">
+
+    <script src="AppPro.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="nav container">
+            <a href="home.html"> <i class='bx bxs-chevron-left' id="seta-esquerda"
+                    style="font-size: 28px; padding-top: 0px;"></i></a>
+        </div>
+    </header>
+
+    <section class="product">
+        <div class="img-container">
+            <img src="assets/images/foto5pro.jpg" alt="" class="img-pro">
+        </div>
+        <div class="product-content" style="padding:25px;">
+            <div class="area1" style="padding-bottom: 0px;">
+                <div class="content-title">
+                    <h3>Coxinha</h3>
+                    <!-- HTML para o segundo produto -->
+                    <div class="product" id="product">
+                        <span class="favorite-icon" onclick="toggleFavorite(5)">
+                            <img src="assets/images/favorite.png" alt="Favorite" class="favorite-img"
+                                id="favorite-icon-5">
+                        </span>
+                    </div>
+                </div>
+                <div class="content-info">
+                    <span><img src="assets/images/panela.png" alt="">PANELA</span>
+                    <span><img src="assets/images/emoji-bravo.png" alt="">FASCINAÇÃO</span>
+                    <span><img src="assets/images/oleo.png" alt="">ÓLEO</span>
+                </div>
+                <div style="padding-top: 30px;">
+                    <p><strong>Ingredientes</strong></p>
+                    <ul>
+                        <li><span class="circle"></span> 1 pacote de salsichas</li>
+                        <li><span class="circle"></span> Massa de pastel pronta (pode ser comprada pronta ou preparada
+                            em casa)</li>
+                        <li><span class="circle"></span> Óleo para fritar</li>
+                    </ul></br>
+                    <p><strong>Preparo da massa</strong></p>
+                    <ul>
+                        <li><span class="number" style="font-size: 16px;">Caso você opte por fazer a massa em casa,
+                                siga as instruções da receita de massa de pastel de sua preferência.
+                                Se preferir, pode utilizar massa de pastel pronta, encontrada em supermercados.</li>
+                    </ul>
+                    <p><strong>Montagem do enrolado</strong></p>
+                    <ul>
+                        <li><span class="number"><strong>1.</strong></span> Abra a massa de pastel em uma superfície
+                            limpa e enfarinhada.</li>
+                        <li><span class="number"><strong>2.</strong></span> Corte a massa em tiras largas e longas o
+                            suficiente para envolver as salsichas.</li>
+                        <li><span class="number"><strong>3.</strong></span> Enrole cada salsicha na massa, deixando um
+                            pouco de espaço nas extremidades.</li>
+                        <li><span class="number"><strong>4.</strong></span> Pressione bem as bordas da massa para selar.
+                        </li>
+                    </ul>
+                    <p><strong>Fritura</strong></p>
+                    <ul>
+                        <li><span class="number"><strong>1.</strong></span> Aqueça o óleo em uma panela ou fritadeira em
+                            temperatura média-alta.</li>
+                        <li><span class="number"><strong>2.</strong></span> Quando o óleo estiver quente, adicione os
+                            enrolados de salsicha, poucos de cada vez, para não sobrecarregar a panela.</li>
+                        <li><span class="number"><strong>3.</strong></span> Frite os enrolados até que fiquem dourados e
+                            crocantes, virando-os ocasionalmente para que fritem por igual.
+                        </li>
+                        <li><span class="number"><strong>4.</strong></span> Retire os enrolados de salsicha do óleo e
+                            deixe escorrer em papel toalha para remover o excesso de gordura.</li>
+                    </ul>
+                </div>
+            </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <ul class="footer-menu">
+            <li><a href="home.html" id="homeLink"><i class='bx bx-home'></i></a></li>
+            <li><a href="FavoriteProduct.html" id="favoriteLink"><i class='bx bx-heart'></i></a>
+            </li>
+            <li><a href="profile.html" id="userLink"><i class='bx bx-user'></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        // Verificar se o tema escuro está ativado quando a página carregar
+        const isDarkMode = localStorage.getItem('theme') === 'dark';
+
+        // Função para ativar o modo escuro
+        function enableDarkMode() {
+            document.body.classList.add('dark-mode');
+            document.body.classList.remove('light-mode');
+        }
+
+        // Se o tema escuro estiver ativado por padrão, ativar o modo escuro
+        if (isDarkMode) {
+            enableDarkMode();
+        }
+    </script>
+
+
+
+    <script src="Favorite.js"></script>
+    <script src="script.js"></script>
+    <script src="AppPro.js"></script>
+</body>
+
+</html>

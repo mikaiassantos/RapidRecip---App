@@ -1,0 +1,22 @@
+{
+    "background_color": "#ffffff",
+    "dir": "ltr",
+    "display": "standalone",
+    "name": "RapidRecip",
+    "orientation": "any",
+    "scope": "/",
+    "short_name": "RapidRecip",
+    "start_url": "/",
+    "theme_color": "#ffffff",
+    "icons": [
+      {
+        "src": "assets/images/144.png",
+        "type": "image/png",
+        "sizes": "144x144",
+        "purpose": "any maskable"
+      }
+    ],
+    "description": "O RapidRecep é um aplicativo projetado para oferecer aos usuários uma variedade de receitas culinárias simples e rápidas, perfeitas para aqueles que procuram praticidade na cozinha. Nosso objetivo é proporcionar uma experiência gastronômica conveniente e deliciosa, oferecendo inspiração e soluções para refeições rápidas e saborosas.",
+    "lang": "pt"
+  }
+  

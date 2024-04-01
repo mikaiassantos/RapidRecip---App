@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" href="assets/images/LogoCafe.png" type="image/x-icon">
+    <title>RapidRecipes - login</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="assets/images/LogoCafe.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form" id="loginFormContainer">
+            <img src="assets/images/LogoCafe.png" alt="RapidRecip" class="logo">
+            <h2 class="form-title">Login</h2>
+            <form id="loginForm" action="home.html" method="post"> <!-- Action definida aqui -->
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="senha" name="senha" placeholder="Senha" required>
+                </div>
+                <button type="button" class="btn-login" onclick="validarLogin()">Entrar</button>
+                <p id="error-message" class="error-message"></p>
+            </form>
+            <p class="form-info">Ainda não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+        </div>
+    </div>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            overflow: hidden;
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: auto;
+            /* Adicione esta linha para permitir a rolagem dentro do container */
+        }
+
+        .form {
+            width: 320px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            width: 100px;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 5px;
+        }
+
+        .form-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #5cb387;
+        }
+
+        .btn-login {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: #5cb387;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-login:hover {
+            background-color: #4caf50;
+        }
+
+        .form-info {
+            text-align: center;
+            color: #888;
+        }
+
+        .form-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .form-info a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+        }
+
+    /*Modo dark-mode*/
+
+        .dark-mode {
+            background-color: #090f17;
+            /* Azul escuro para o fundo */
+            color: #fff;
+            /* Texto branco para melhor contraste */
+        }
+
+        .dark-mode .container {
+            background-color: transparent;
+            /* Remover o fundo branco do container */
+        }
+
+        .dark-mode .form {
+            background-color: #090f17;
+            /* Fundo azul escuro para o formulário */
+            border: 1px solid #fff;
+            /* Sombra mais suave */
+        }
+
+        .dark-mode .form-title {
+            color: #fff;
+            /* Título branco */
+        }
+
+        .dark-mode .form-group input {
+            border:none;
+            /* Azul mais claro para a borda do input */
+        }
+
+        .dark-mode .form-group input:focus {
+            border-color: #5cb387;
+            /* Azul claro mais intenso quando em foco */
+        }
+
+        .dark-mode .btn-login {
+            background-color: #5cb387;
+            /* Azul claro para o botão de login */
+        }
+
+        .dark-mode .btn-login:hover {
+            background-color: #4caf50;
+            /* Azul mais escuro ao passar o mouse */
+        }
+
+        .dark-mode .form-info {
+            color: #f0f7ff;
+            /* Texto mais claro para informações */
+        }
+
+        .dark-mode .form-info a {
+            color: #45aaf2;
+            /* Azul claro para links */
+        }
+
+        .dark-mode .form-info a:hover {
+            text-decoration: underline;
+            /* Sublinhar link ao passar o mouse */
+        }
+    </style>
+
+    <script>
+        function validarLogin() {
+            var email = document.getElementById('email').value;
+            var senha = document.getElementById('senha').value;
+            var errorMessage = document.getElementById('error-message');
+
+            if (email.trim() === '' || senha.trim() === '') {
+                errorMessage.textContent = "Por favor, preencha todos os campos.";
+            } else {
+                // Redireciona para a página home.html
+                window.location.href = "home.html";
+            }
+        }
+
+        // Verificar se o tema escuro está ativado quando a página carregar
+        const isDarkMode = localStorage.getItem('theme') === 'dark';
+
+        // Função para ativar o modo escuro
+        function enableDarkMode() {
+            document.body.classList.add('dark-mode');
+            document.body.classList.remove('light-mode');
+        }
+
+        // Se o tema escuro estiver ativado por padrão, ativar o modo escuro
+        if (isDarkMode) {
+            enableDarkMode();
+        }
+    </script>
+</body>
+
+</html>
